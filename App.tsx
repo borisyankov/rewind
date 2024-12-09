@@ -25,6 +25,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import './global.css';
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -72,6 +74,7 @@ function App(): React.JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <View className="w-10 h-10 bg-blue-500" />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
