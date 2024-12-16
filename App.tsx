@@ -1,8 +1,17 @@
 import React from 'react';
-import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View as ReactNativeView,
+} from 'react-native';
+import {cssInterop, verifyInstallation} from 'nativewind';
+import './global.css';
 
-// import {verifyInstallation} from 'nativewind';
-// import './global.css';
+const View = cssInterop(ReactNativeView, {
+  className: 'style',
+});
 
 function App(): React.JSX.Element {
   // verifyInstallation();

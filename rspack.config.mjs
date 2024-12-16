@@ -1,6 +1,7 @@
 import {createRequire} from 'node:module';
 import path from 'node:path';
 import * as Repack from '@callstack/repack';
+import {NativeWindPlugin} from './plugin-nativewind/plugin.js';
 
 const dirname = Repack.getDirname(import.meta.url);
 const {resolve} = createRequire(import.meta.url);
@@ -163,6 +164,10 @@ export default env => {
           sourceMapFilename,
           assetsPath,
         },
+      }),
+      new NativeWindPlugin({
+        input: './global.css',
+        platform,
       }),
     ],
     experiments: {
